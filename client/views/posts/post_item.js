@@ -6,7 +6,7 @@ Template.postItem.helpers({
     var a = document.createElement('a');
     a.href = this.url;
     return a.hostname;
-  }
+  },
   upvotedClass: function() {
     var userId = Meteor.userId();
     if (userId && !_.include(this.upvoters, userId)) {
@@ -16,6 +16,7 @@ Template.postItem.helpers({
     }
   }
 });
+
 Template.postItem.events({
   'click .upvotable': function(e) {
     e.preventDefault();
